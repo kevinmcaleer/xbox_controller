@@ -10,6 +10,7 @@ for i in range(0, pygame.joystick.get_count()):
     joysticks[-1].init()
 
 print(joysticks)
+print(pygame.joystick.Joystick(0).get_name)
 
 while True or KeyboardInterrupt:
     for event in pygame.event.get():
