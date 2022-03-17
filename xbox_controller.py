@@ -31,4 +31,6 @@ while True or KeyboardInterrupt:
             if event.button == 8:
                 print("button 8 down")
         if event.type == pygame.JOYAXISMOTION:
+            if event.axis < 2:
+                print(f"motion axis:value {event.value}")
             print(event)
