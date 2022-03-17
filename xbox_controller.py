@@ -1,5 +1,7 @@
+
+
 import pygame
-from pygame.constants import JOYBUTTONDOWN, KEYDOWN
+from pygame.constants import JOYBUTTONDOWN
 pygame.init()
 
 joysticks = []
@@ -12,5 +14,19 @@ print(joysticks)
 while True or KeyboardInterrupt:
     for event in pygame.event.get():
         if event.type ==JOYBUTTONDOWN:
-            if event.button == 0
-                print("button down")∏
+            if event.button == 0:
+                print("button 0 down")
+            if event.button == 1:
+                print("button 1 down")
+            if event.button == 2:
+                print("button 2 down")
+            if event.button == 3:
+                print("button 4 down")
+            if event.button == 5:
+                print("button 5 down")
+            if event.button == 6:
+                print("button 6 down")
+            if event.button == 7:
+                print("button 7 down")
+            if event.button == 8:
+                print("button 8 down")
