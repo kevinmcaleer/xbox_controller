@@ -38,7 +38,7 @@ while True or KeyboardInterrupt:
                 print("button 8 down")
         if event.type == pygame.JOYAXISMOTION:
             if event.axis < 2: # Left stick
-                print(f"motion axis:value {event.value}")
+                # print(f"motion axis:value {event.value}")
                 if event.axis == 0: # up/down
                     if event.value < 0:
                         print("down")
