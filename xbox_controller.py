@@ -30,3 +30,5 @@ while True or KeyboardInterrupt:
                 print("button 7 down")
             if event.button == 8:
                 print("button 8 down")
+        if event.type == pygame.JOYAXISMOTION:
+            print(event)
