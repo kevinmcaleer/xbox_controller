@@ -46,7 +46,7 @@ while True or KeyboardInterrupt:
                         print("right")
                 if event.axis == 1: # up/down
                     if event.value < -0.5:
-                        print("down")
-                    if event.value > 0.5:
                         print("up")
+                    if event.value > 0.5:
+                        print("down")
             # print(event)
