@@ -39,14 +39,14 @@ while True or KeyboardInterrupt:
         if event.type == pygame.JOYAXISMOTION:
             if event.axis < 2: # Left stick
                 # print(f"motion axis:value {event.value}")
-                if event.axis == 0: # up/down
-                    if event.value < -0.5:
-                        print("down")
-                    if event.value > 0.5:
-                        print("up")
-                if event.axis == 1: # left/right
+                if event.axis == 0: # left/right
                     if event.value < -0.5:
                         print("left")
                     if event.value > 0.5:
                         print("right")
+                if event.axis == 1: # up/down
+                    if event.value < -0.5:
+                        print("down")
+                    if event.value > 0.5:
+                        print("up")
             # print(event)
