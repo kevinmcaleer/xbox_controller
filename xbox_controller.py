@@ -1,6 +1,10 @@
+# Remote control Explora
+# Kevin McAleer
+# 17 March 2022
 
-
+# We use Pygame to access the Xbox One Controller
 import pygame
+import explorerhat
 from pygame.constants import JOYBUTTONDOWN
 pygame.init()
 
@@ -9,7 +13,7 @@ for i in range(0, pygame.joystick.get_count()):
     joysticks.append(pygame.joystick.Joystick(i))
     joysticks[-1].init()
 
-print(joysticks)
+# Print out the name of the controller
 print(pygame.joystick.Joystick(0).get_name())
 
 # Xbox Joystick Axis:
@@ -17,7 +21,10 @@ print(pygame.joystick.Joystick(0).get_name())
 # Axis 1 Left, Right, Left value is: -1, right value is 1
 # center is always 0
 
+# Main Loop
 while True or KeyboardInterrupt:
+
+    # Check for joystick events
     for event in pygame.event.get():
         if event.type ==JOYBUTTONDOWN:
             if event.button == 0:
@@ -38,7 +45,6 @@ while True or KeyboardInterrupt:
                 print("button 8 down")
         if event.type == pygame.JOYAXISMOTION:
             if event.axis < 2: # Left stick
-                # print(f"motion axis:value {event.value}")
                 if event.axis == 0: # left/right
                     if event.value < -0.5:
                         print("left")
@@ -47,6 +53,9 @@ while True or KeyboardInterrupt:
                 if event.axis == 1: # up/down
                     if event.value < -0.5:
                         print("up")
+                        explorerhat.motor.one.forwards()
+                        explorerhat.motor.two.forwards()
                     if event.value > 0.5:
                         print("down")
-            # print(event)
+                        explorerhat.motor.one.backwards()
+                        explorerhat.motor.two.backwards()
