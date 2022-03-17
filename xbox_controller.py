@@ -12,6 +12,11 @@ for i in range(0, pygame.joystick.get_count()):
 print(joysticks)
 print(pygame.joystick.Joystick(0).get_name())
 
+# Xbox Joystick Axis:
+# Axis 0 up down, down value is -1, up value is 1
+# Axis 1 Left, Right, Left value is: -1, right value is 1
+# center is always 0
+
 while True or KeyboardInterrupt:
     for event in pygame.event.get():
         if event.type ==JOYBUTTONDOWN:
@@ -32,6 +37,16 @@ while True or KeyboardInterrupt:
             if event.button == 8:
                 print("button 8 down")
         if event.type == pygame.JOYAXISMOTION:
-            if event.axis < 2:
+            if event.axis < 2: # Left stick
                 print(f"motion axis:value {event.value}")
-            print(event)
+                if event.axis == 0: # up/down
+                    if event.value < 0:
+                        print("down")
+                    if event.value > 0:
+                        print("up")
+                if event.axis == 1: # left/right
+                    if event.value < 0:
+                        print("left")
+                    if event.value > 0:
+                        print("right")
+            # print(event)
