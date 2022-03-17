@@ -49,15 +49,15 @@ while True or KeyboardInterrupt:
                 if event.axis == 0: # left/right
                     if event.value < -0.5:
                         print("left")
-                        explorerhat.motor.one.forwards()
-                        explorerhat.motor.two.backwards()
+                        explorerhat.motor.one.backwards()
+                        explorerhat.motor.two.forwards()
                         sleep(0.01)
                         explorerhat.motor.one.stop()
                         explorerhat.motor.two.stop()
                     if event.value > 0.5:
-                        print("right")
-                        explorerhat.motor.one.backwards()
-                        explorerhat.motor.two.forwards()
+                        print("right")                        
+                        explorerhat.motor.one.forwards()
+                        explorerhat.motor.two.backwards()
                         sleep(0.01)
                         explorerhat.motor.one.stop()
                         explorerhat.motor.two.stop()
