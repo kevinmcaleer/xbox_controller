@@ -49,6 +49,8 @@ while True or KeyboardInterrupt:
                 if event.axis == 0: # left/right
                     if event.value < -0.5:
                         print("left")
+                        motor_speed = event.value * -1
+                        print(f"motor_speed: {motor_speed}")
                         explorerhat.motor.one.backwards()
                         explorerhat.motor.two.forwards()
                         sleep(0.01)
